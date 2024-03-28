@@ -1,0 +1,11 @@
+@keyframes heartbeat {
+    from {                               // от какого состояния
+        transform: scale(1);            //scale: -масштаб, (1)- это 100%
+    }
+    50% {                               // можно задавать разные промежуточные значения
+        transform: scale(1.5);
+    }
+    to {                              // к какому состоянию
+        transform: scale(1);
+    }
+}

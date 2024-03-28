@@ -1,0 +1,50 @@
+.advantages {
+    min-height: 472px;
+    padding: 69px 0 81px 0;
+    &__wrapper {
+        margin-top: 65px;
+        display: flex;
+        justify-content: space-between;
+    }         
+    &_item {
+        width: 250px;
+    }
+    &__icon {
+        width: 70px;
+        height: 70px;
+        margin: 0 auto;
+        img {
+            width: 100%;
+        }
+        &_animated {    //модификатор для анимации // задаём анимацию
+            animation: heartbeat 0.8s ease infinite; // всё одной строкой . Миниму 2 первых параметра - название анимации и продолжительность
+            animation-name: heartbeat;         
+            animation-duration: 0.8s;              // время анимации
+            animation-timing-function: ease;    // тип тайминга анимации, описания в документации
+            animation-iteration-count: infinite; // продолжительность анимации
+            &:hover {
+                animation-play-state: paused;   // анимация будет становиться на паузу при наведении
+            }
+        }
+    }
+    &__title {
+        margin-top: 38px;    
+        font-size: 18px;
+        line-height: 1.2;
+        font-weight: 700;
+        color: #0d0d0d;
+        text-align: center;
+    }
+    &__text {
+        margin-top: 26px;
+        font-size: 14px;
+        line-height: 1.2;
+        font-weight: 500;
+        color: #0d0d0d;
+        text-align: center;
+        a {
+            color: $main-color;
+        }   
+    }
+           
+}
