@@ -12,22 +12,34 @@ window.addEventListener("DOMContentLoaded", function () {
 
   if (document.body.querySelector(".action")) {
     var btn = document.querySelector(".action__btn"),
-      overlay = document.querySelector(".action__overlay");
+      modalWindow = document.querySelector(".action-modal"),
+      close = document.querySelector(".action-modal__close"),
+      overlay = document.querySelector(".action-modal__overlay");
     var showModal = function showModal() {
       btn.addEventListener("click", function () {
         overlay.style.display = "block";
+        close.classList.add("animation__type__fade");
+        modalWindow.classList.add("animation__type__fade_modal");
+        overlay.classList.remove("animation__type__fadeOut_modal");
       });
     };
     showModal();
-    var closeByOverclick = function closeByOverclick() {
+    var closeByOverclick = function closeByOverclick(fadeItem) {
       overlay.addEventListener("click", function (e) {
         var curentModal = e.target.closest(".modal");
         if (!curentModal) {
-          overlay.style.display = "none";
+          fadeItem.classList.remove("animation__type__fade_modal");
+          close.classList.remove("animation__type__fade");
+          fadeItem.classList.add("animation__type__fadeOut_modal");
+          fadeItem.addEventListener("animationend", function (e) {
+            if (e.target.classList.contains("animation__type__fadeOut_modal")) {
+              overlay.style.display = "none";
+            }
+          });
         }
       });
     };
-    closeByOverclick();
+    closeByOverclick(overlay);
     var launchTimer = function launchTimer() {
       function getTime() {
         var deadline = "2025-01-1",
@@ -135,12 +147,17 @@ window.addEventListener("DOMContentLoaded", function () {
 window.addEventListener("DOMContentLoaded", function () {
   "use strict";
 
-  var tabs = document.querySelectorAll(".autorization__tabs"),
-    content = document.querySelectorAll(".autorization__content"),
-    forget = document.querySelector(".autorization__forgetPass"),
-    block = document.querySelector(".autorization__block"),
-    blockPass = document.querySelector(".autorization__pass");
   if (document.body.querySelector(".autorization")) {
+    var tabs = document.querySelectorAll(".autorization__tabs"),
+      content = document.querySelectorAll(".autorization__content"),
+      forget = document.querySelector(".autorization__forgetPass"),
+      block = document.querySelector(".autorization__block"),
+      blockPass = document.querySelector(".autorization__pass"),
+      select = document.querySelector(".feed-form__select_sign"),
+      selectText = document.querySelector(".feed-form__select > span"),
+      optionsBlock = document.querySelector(".feed-form__optionsWrap"),
+      options = optionsBlock.querySelectorAll(".feed-form__option"),
+      optionsRadio = optionsBlock.querySelectorAll(".feed-form__hidden");
     var contentHide = function contentHide(b) {
       for (var a = b; a < content.length; a++) {
         content[a].classList.remove("show");
@@ -173,6 +190,51 @@ window.addEventListener("DOMContentLoaded", function () {
       });
     };
     blockShow(forget, block, blockPass);
+    var selectSet = function selectSet(clickItem) {
+      clickItem.addEventListener("click", function (e) {
+        if (e.target == this) {
+          select.classList.toggle("feed-form__select_sign_active");
+          optionsBlock.classList.toggle("feed-form__optionsWrap_active");
+          optionsBlock.classList.remove("animation__type__fadeOut_select");
+          optionsBlock.classList.add("animation__type__fade_select");
+        }
+        for (var i = 0; i < options.length; i++) {
+          if (e.target == options[i]) {
+            select.classList.remove("feed-form__select_sign_active");
+            optionsBlock.classList.remove("animation__type__fade_select");
+            optionsBlock.classList.add("animation__type__fadeOut_select");
+            optionsBlock.addEventListener("animationend", function (e) {
+              if (e.target.classList.contains("animation__type__fadeOut_select")) {
+                optionsBlock.classList.remove("feed-form__optionsWrap_active");
+              }
+            });
+          }
+        }
+      });
+      selectText.textContent = optionsRadio[0].value;
+      optionsRadio.forEach(function (item, i) {
+        item.addEventListener("input", function () {
+          if (optionsRadio[i].checked) {
+            var val = optionsRadio[i].value;
+            selectText.textContent = val;
+          }
+        });
+      });
+      document.body.addEventListener("click", function (e) {
+        if (e.target !== select && e.target !== selectText) {
+          select.classList.remove("feed-form__select_sign_active");
+          optionsBlock.classList.remove("animation__type__fade_select");
+          optionsBlock.classList.add("animation__type__fadeOut_select");
+          optionsBlock.addEventListener("animationend", function (e) {
+            if (e.target.classList.contains("animation__type__fadeOut_select")) {
+              optionsBlock.classList.remove("feed-form__optionsWrap_active");
+            }
+          });
+        }
+      });
+    };
+    selectSet(select);
+    selectSet(selectText);
   }
 });
 
@@ -218,32 +280,50 @@ window.addEventListener("DOMContentLoaded", function () {
   "use strict";
 
   if (document.body.querySelector(".events")) {
-    var overlay = document.querySelector(".action__overlay"),
-      close = document.querySelector(".action__close"),
+    var overlay = document.querySelector(".action-modal__overlay"),
+      modalWindow = document.querySelector(".action-modal"),
+      close = document.querySelector(".action-modal__close"),
       btn = document.querySelectorAll(".events__btn");
     var showModal = function showModal() {
       btn.forEach(function (item) {
         item.addEventListener("click", function () {
           overlay.style.display = "block";
+          close.classList.add("animation__type__fade");
+          modalWindow.classList.add("animation__type__fade_modal");
+          overlay.classList.remove("animation__type__fadeOut_modal");
         });
       });
     };
     showModal();
-    var closeModal = function closeModal() {
-      close.addEventListener("click", function () {
-        overlay.style.display = "none";
-      });
-    };
-    closeModal();
-    var closeByOverclick = function closeByOverclick() {
+    var closeByOverclick = function closeByOverclick(fadeItem) {
       overlay.addEventListener("click", function (e) {
         var curentModal = e.target.closest(".modal");
         if (!curentModal) {
-          overlay.style.display = "none";
+          fadeItem.classList.remove("animation__type__fade_modal");
+          close.classList.remove("animation__type__fade");
+          fadeItem.classList.add("animation__type__fadeOut_modal");
+          fadeItem.addEventListener("animationend", function (e) {
+            if (e.target.classList.contains("animation__type__fadeOut_modal")) {
+              overlay.style.display = "none";
+            }
+          });
         }
       });
     };
-    closeByOverclick();
+    closeByOverclick(overlay);
+    var getValue = function getValue() {
+      var radio = document.querySelectorAll("input[type='radio'][name=couple]"),
+        btn = document.querySelector(".action-modal__btn");
+      radio.forEach(function (item, i) {
+        item.addEventListener("click", function () {
+          if (radio[i].checked) {
+            var val = radio[i].value;
+            btn.textContent = "Оплатить " + val;
+          }
+        });
+      });
+    };
+    getValue();
     var setTabs = function setTabs(tabClass, contentClass) {
       var tabs = Array.from(document.querySelectorAll(tabClass)),
         tabsContent = Array.from(document.querySelectorAll(contentClass));
@@ -553,7 +633,7 @@ window.addEventListener("DOMContentLoaded", function () {
       if (form.id == "registration") {
         var checkboxVal = document.getElementById("sign-checkbox").checked,
           emailVal = validate_js__WEBPACK_IMPORTED_MODULE_0___default().collectFormValues(registrationForm).email,
-          selectVal = validate_js__WEBPACK_IMPORTED_MODULE_0___default().collectFormValues(registrationForm).select,
+          selectVal = validate_js__WEBPACK_IMPORTED_MODULE_0___default().collectFormValues(registrationForm).sex,
           passwordVal = validate_js__WEBPACK_IMPORTED_MODULE_0___default().collectFormValues(registrationForm).password,
           passwordConfVal = validate_js__WEBPACK_IMPORTED_MODULE_0___default().collectFormValues(registrationForm).password_conf,
           _userVal2 = validate_js__WEBPACK_IMPORTED_MODULE_0___default().collectFormValues(registrationForm).user,
@@ -783,7 +863,7 @@ window.addEventListener("DOMContentLoaded", function () {
           _ErrorBox6.style.display = "none";
           _ErrorBox6.textContent = "";
           sendRequest();
-          setTimeout(toReplace, 4000);
+          setTimeout(toReplace, 3000);
         }
       }
       if (form.id == "connect-form") {
@@ -844,6 +924,7 @@ window.addEventListener("DOMContentLoaded", function () {
           _ErrorBox7.forEach(function (item) {
             return item.textContent = "";
           });
+          sendRequest();
         }
       }
     });
@@ -962,34 +1043,83 @@ window.addEventListener("DOMContentLoaded", function () {});
 window.addEventListener("DOMContentLoaded", function () {
   "use strict";
 
-  if (document.body.querySelector(".promo")) {
-    var overlay = document.querySelector(".join__overlay"),
-      close = document.querySelector(".join__close");
+  if (document.querySelector(".promo")) {
+    var overlay = document.querySelector(".join-modal__overlay"),
+      close = document.querySelector(".join-modal__close"),
+      onloadModal = document.querySelector(".promo__overlay"),
+      confirmBtn = document.querySelector(".promo-modal__yes"),
+      deniedBtn = document.querySelector(".promo-modal__no"),
+      modalWindow = document.querySelector(".join-modal");
+    window.addEventListener("load", function () {
+      var currentCounter = sessionStorage.getItem("currentCounter");
+      if (!currentCounter || currentCounter == "false") {
+        toAgeConfirm();
+      }
+    });
+    var toAgeConfirm = function toAgeConfirm() {
+      onloadModal.classList.add("promo__overlay_active");
+      document.body.classList.add("body_blur");
+      confirmBtn.addEventListener("click", function () {
+        sessionStorage.setItem("currentCounter", "true");
+        document.body.classList.remove("body_blur");
+        onloadModal.classList.add("animation__type__fadeOut_modal");
+        onloadModal.addEventListener("animationend", function (e) {
+          if (e.target.classList.contains("animation__type__fadeOut_modal")) {
+            e.target.classList.remove("promo__overlay_active");
+          }
+        });
+      });
+      deniedBtn.addEventListener("click", function () {
+        location.replace("404.html");
+        sessionStorage.setItem("currentCounter", "false");
+      });
+    };
     var showModal = function showModal(btnClass) {
       var btn = document.querySelectorAll(btnClass);
       btn.forEach(function (item) {
         item.addEventListener("click", function () {
           overlay.style.display = "block";
+          modalWindow.classList.add("animation__type__fade_modal");
+          close.classList.add("animation__type__fade");
+          overlay.classList.remove("animation__type__fadeOut_modal");
+          close.classList.remove("animation__type__fadeOut_modal");
         });
       });
     };
     showModal(".promo__btn");
     showModal(".join__btn");
-    var closeModal = function closeModal() {
-      close.addEventListener("click", function () {
-        overlay.style.display = "none";
-      });
-    };
-    closeModal();
-    var closeByOverclick = function closeByOverclick() {
+    var closeByOverclick = function closeByOverclick(fadeItem) {
       overlay.addEventListener("click", function (e) {
         var curentModal = e.target.closest(".modal");
         if (!curentModal) {
-          overlay.style.display = "none";
+          fadeItem.classList.remove("animation__type__fade_modal");
+          close.classList.remove("animation__type__fade");
+          fadeItem.classList.add("animation__type__fadeOut_modal");
+          fadeItem.addEventListener("animationend", function (e) {
+            if (e.target.classList.contains("animation__type__fadeOut_modal")) {
+              overlay.style.display = "none";
+            }
+          });
         }
       });
     };
-    closeByOverclick();
+    closeByOverclick(overlay);
+    /* closeByOverclick(close); */
+
+    /* let closeModal = function closeModal(fadeItem) {
+        close.addEventListener("click", function () {
+            fadeItem.classList.remove("animation__type__fade_modal");
+            fadeItem.classList.add("animation__type__fadeOut_modal");
+            fadeItem.addEventListener("animationend", (e) => {
+                if(e.target.classList.contains("animation__type__fadeOut_modal")) {
+                    overlay.style.display = "none";
+                }
+            });
+            
+        });
+    };
+     closeModal(close);
+    closeModal(overlay); */
   }
 });
 
@@ -1005,15 +1135,18 @@ window.addEventListener("DOMContentLoaded", function () {
   "use strict";
 
   if (document.querySelector(".questions")) {
-    var question = document.querySelectorAll(".questions__headline"),
-      questionBox = document.querySelectorAll(".questions__box"),
+    var questionBox = document.querySelectorAll(".questions__box"),
       content = document.querySelectorAll(".questions__content"),
       plus = document.querySelectorAll(".questions__plus"),
       screenWidth = document.documentElement.clientWidth;
     var showContent = function showContent(a) {
-      content[a].classList.toggle("questions__content_active");
-      plus[a].classList.toggle("questions__plus_active");
-      questionBox[a].classList.toggle("questions__box_active");
+      if (questionBox[a].classList.contains("questions__box_active")) {
+        content[a].classList.add("questions__content_active");
+        plus[a].classList.add("questions__plus_active");
+      } else {
+        content[a].classList.remove("questions__content_active");
+        plus[a].classList.remove("questions__plus_active");
+      }
       if (screenWidth > 1200) {
         if (questionBox[a].classList.contains("questions__box_active")) {
           questionBox[a].style.maxHeight = content[a].clientHeight + 103 + "px";
@@ -1044,14 +1177,17 @@ window.addEventListener("DOMContentLoaded", function () {
       }
     };
     var toClickItem = function toClickItem(clickItem) {
-      clickItem.forEach(function (item, i) {
+      clickItem.forEach(function (item) {
         item.addEventListener("click", function () {
-          showContent(i);
+          for (var i = 0; i < clickItem.length; i++) {
+            clickItem[i].classList.remove("questions__box_active");
+            this.classList.add("questions__box_active");
+            showContent(i);
+          }
         });
       });
     };
-    toClickItem(plus);
-    toClickItem(question);
+    toClickItem(questionBox);
   }
 });
 
@@ -1148,13 +1284,18 @@ window.addEventListener("DOMContentLoaded", function () {
   "use strict";
 
   if (document.querySelector(".vip")) {
-    var overlay = document.querySelector(".join__overlay"),
-      close = document.querySelector(".join__close");
+    var overlay = document.querySelector(".join-modal__overlay"),
+      close = document.querySelector(".join-modal__close"),
+      modalWindow = document.querySelector(".join-modal");
     var showModal = function showModal(btnClass) {
       var btn = document.querySelectorAll(btnClass);
       btn.forEach(function (item) {
         item.addEventListener("click", function () {
           overlay.style.display = "block";
+          modalWindow.classList.add("animation__type__fade_modal");
+          close.classList.add("animation__type__fade");
+          overlay.classList.remove("animation__type__fadeOut_modal");
+          close.classList.remove("animation__type__fadeOut_modal");
         });
       });
     };
@@ -1165,15 +1306,22 @@ window.addEventListener("DOMContentLoaded", function () {
       });
     };
     closeModal();
-    var closeByOverclick = function closeByOverclick() {
+    var closeByOverclick = function closeByOverclick(fadeItem) {
       overlay.addEventListener("click", function (e) {
         var curentModal = e.target.closest(".modal");
         if (!curentModal) {
-          overlay.style.display = "none";
+          fadeItem.classList.remove("animation__type__fade_modal");
+          close.classList.remove("animation__type__fade");
+          fadeItem.classList.add("animation__type__fadeOut_modal");
+          fadeItem.addEventListener("animationend", function (e) {
+            if (e.target.classList.contains("animation__type__fadeOut_modal")) {
+              overlay.style.display = "none";
+            }
+          });
         }
       });
     };
-    closeByOverclick();
+    closeByOverclick(overlay);
   }
 });
 
