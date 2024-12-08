@@ -23,7 +23,7 @@
         <link rel="apple-touch-icon" sizes="167x167" href="../img/favicons/apple-touch-icon-167x167.png">
         <link rel="apple-touch-icon" sizes="180x180" href="../img/favicons/apple-touch-icon-180x180.png">
         <link rel="apple-touch-icon" sizes="1024x1024" href="../img/favicons/apple-touch-icon-1024x1024.png">
-        <link rel="stylesheet" href="../styles/main.min.css">
+        <link rel="stylesheet" href="../styles/main.css">
     </head>
     <body>
         <header class="header">
@@ -212,7 +212,7 @@
         </div> 
         <div class="footer__wrapper">
             <div class="footer__logwrap">
-                <div class="logo footer__logo"><a href="../index.html"><img /img/logo.svg" alt="logo"></a></div>
+                <div class="logo footer__logo"><a href="../index.html"><img src="../img/logo.svg" alt="logo"></a></div>
                 <div class="footer__emailwrap">
                     <div class="footer__letter"> <img src="../img/icons/gmail.svg" alt="letter"></div> 
                     <div class="footer__email"><a href="mailto:info@gmail.com">info@gmail.com</a></div>
@@ -220,7 +220,7 @@
             </div>
             <div>
                 <ul class="footer__list">
-                <div class="title footer__headline">Компания</div>
+                    <li>Компания</li>
                     <li><a href="../index.html">Главная</a></li>
                     <li><a href="autorization.html">Вступить в клуб</a></li>
                     <li><a href="events.html">Афиша (наши мероприятия)</a></li>
@@ -229,7 +229,7 @@
             </div>
             <div>
                 <ul class="footer__list footer__list_ml-">
-                <div class="title footer__headline">Система</div>
+                    <li>Система</li>
                     <li><a href="rules.html">Правила</a></li>
                     <li><a href="VIP.html">VIP</a></li>
                     <li><a href="loyalty.html">Система лояльности</a></li>
@@ -254,11 +254,11 @@
             </h3>
             <form id="armor-first-step">
                 <div class="action-modal__wrapper">
-                    <input data-validate="required" name="sex" id="couple" value="couple" type="radio" class="feed-form__hidden action-modal__hidden" ></input>
+                    <input data-validate="required" name="sex" id="couple" value="couple" type="radio" class="feed-form__hidden action-modal__hidden">
                     <label for="couple" class="action-modal__label action-modal__label_mw213">Пара</label>
-                    <input data-validate="required" name="sex" id="man" value="man" type="radio" class="feed-form__hidden action-modal__hidden" ></input>
+                    <input data-validate="required" name="sex" id="man" value="man" type="radio" class="feed-form__hidden action-modal__hidden">
                     <label for="man" class="action-modal__label">Мужчина</label>
-                    <input data-validate="required" name="sex" id="woman" value="woman" type="radio" class="feed-form__hidden action-modal__hidden" ></input>
+                    <input data-validate="required" name="sex" id="woman" value="woman" type="radio" class="feed-form__hidden action-modal__hidden">
                     <label for="woman" class="action-modal__label">Женщина</label>
                 </div>
                 <div class="feed-form__errorBox feed-form__errorBox_mt10 feed-form__errorBox_bt0 feed-form__errorBox_armor-couple"></div>
@@ -287,7 +287,7 @@
                 <div class="action-modal__content animation__type__fade">
                     <div class="action-modal__price">
                         <div>
-                            <input id="single-man-cost" name="couple" value="5000 ₽" type="radio" class="feed-form__hidden action-modal__hidden action-modal__hidden_price"> <!-- !!!!!!! -->
+                            <input id="single-man-cost" name="couple" value="5000 ₽" type="radio" class="feed-form__hidden action-modal__hidden action-modal__hidden_price">
                             <label class="action-modal__radio" for="single-man-cost"></label>
                             <div class="feed-form__label feed-form__label_white">Билет вход с человека</div>
                         </div>
@@ -295,7 +295,7 @@
                     </div>
                     <div class="action-modal__price">
                         <div>
-                            <input id="single-man-cost-comfort" name="couple" value="Комфорт 6000 ₽" type="radio" class="feed-form__hidden action-modal__hidden action-modal__hidden_price"> <!-- !!!!!!! -->
+                            <input id="single-man-cost-comfort" name="couple" value="Комфорт 6000 ₽" type="radio" class="feed-form__hidden action-modal__hidden action-modal__hidden_price"> 
                             <label class="action-modal__radio" for="single-man-cost-comfort"></label>
                             <div class="feed-form__label feed-form__label_white">Билет вход Comfort с человека</div>
                         </div>
@@ -313,7 +313,7 @@
                     </div>
                     <div class="action-modal__price">
                         <div>
-                            <input id="single-woman-cost-comfort" name="couple" value="Комфорт 6000 ₽" type="radio" class="feed-form__hidden action-modal__hidden action-modal__hidden_price"> <!-- !!!!!!! -->
+                            <input id="single-woman-cost-comfort" name="couple" value="Комфорт 6000 ₽" type="radio" class="feed-form__hidden action-modal__hidden action-modal__hidden_price"> 
                             <label class="action-modal__radio" for="single-woman-cost-comfort"></label>
                             <div class="feed-form__label feed-form__label_white">Билет вход Comfort с человека</div>
                         </div>
@@ -335,13 +335,13 @@
             <h3 class="join-modal__title">Вход в клуб</h3>
             <div class="join-modal__descr">Стоимость билета в клуб 100 рублей</div>
             <form id="join-modal" class="join-modal__form feed-form feed-form_modal">
-                <input  id="join-email" name="join-email" class="join-modal__input feed-form__input feed-form__input_h66 feed-form__input_modal" placeholder="Адрес электронной почты"></input>
+                <input  id="join-email" name="join-email" class="join-modal__input feed-form__input feed-form__input_h66 feed-form__input_modal" placeholder="Адрес электронной почты">
                 <div class="feed-form__errorBox feed-form__errorBox_jspec feed-form__errorBox_join-email"></div>
                 <button class="button button_footer button_nobg join-modal__btn">Оплатить вход в клуб</button>
                 <div class="join-modal__confidentialWrap feed-form__confidentialWrap feed-form__confidentialWrap_mt20 ">
                     <input id="join-modal-checkbox" name="rules" type="checkbox"  class="feed-form__hidden join-modal__hidden">
                     <label for="join-modal-checkbox" class="join-modal__checkbox feed-form__checkbox_modal feed-form__checkbox"></label>
-                    <div class="join-modal__confidential feed-form__confidential feed-form__confidential_mt0"><a href="pages/rules.html">Я согласен с правилами клуба</a></div>
+                    <div class="join-modal__confidential feed-form__confidential feed-form__confidential_mt0"><a href="rules.html">Я согласен с правилами клуба</a></div>
                 </div>
                 <div class="feed-form__errorBox feed-form__errorBox_join-modal-checkbox"></div>
             </form>
@@ -349,7 +349,7 @@
         <div class="join-modal__close modal__close"></div>
     </div>
 </div>
-        <script src="../js/vendor.min.js"></script>
-        <script src="../js/main.min.js"></script>
+        <script src="../js/vendor.js"></script>
+        <script src="../js/main.js"></script>
     </body>
 </html>+
