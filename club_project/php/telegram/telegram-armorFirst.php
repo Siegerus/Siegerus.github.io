@@ -1,8 +1,8 @@
 <?php
  
-  const TOKEN = '7367612942:AAFI0FQzQZjrFndp0brU65lOVnToSFiEkiA';
+  const TOKEN = '';
  
-  const CHATID = '-4138443533';
+  const CHATID = '';
  
  
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
