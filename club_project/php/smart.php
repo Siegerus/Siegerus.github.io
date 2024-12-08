@@ -14,13 +14,13 @@ $mail->CharSet = 'utf-8';
 $mail->isSMTP();                                     
 $mail->Host = 'smtp.gmail.com';  
 $mail->SMTPAuth = true;                               
-$mail->Username = 'ivanoff1siegerus@gmail.com';                 
-$mail->Password = 'yyfl tjuw exhg mzsi';                           
+$mail->Username = '';                 
+$mail->Password = '';                           
 $mail->SMTPSecure = 'ssl';                            
 $mail->Port = 465;                                    
  
-$mail->setFrom('ivanoff1siegerus@gmail.com', 'discover_project');  
-$mail->addAddress('ivanoffsiegerus@gmail.com');     
+$mail->setFrom('', 'discover_project');  
+$mail->addAddress('');     
 
 $mail->isHTML(true);                                  
 
