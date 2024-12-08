@@ -26,14 +26,42 @@
         <link rel="stylesheet" href="../styles/main.min.css">
     </head>
     <body>
-    <header class="header">
-        <div class="container">
-            <div class="header__wrapper">
+        <header class="header">
+    <div class="container">
+        <div class="header__wrapper">
+            <div class="logo header__logo animation__type__logo">
+                <a href="../index.html">
+                    <picture>
+                        <source media="(max-width: 767px)" srcset="../img/logo.svg">
+                        <source media="(min-width: 768px)" srcset="../img/logo.svg">
+                        <img src="../img/logo.svg" alt="logo">
+                    </picture>
+                </a>
+            </div>
+            <nav class="header__nav header__nav_m-hidden">
+                <ul class="header__list">
+                    <li><a href="../index.html">Главная</a></li>
+                    <li><a href="curent-event.html">Мероприятия</a></li>
+                    <li><a href="bangles.html">Браслеты</a></li>
+                    <li><a href="rules.html">Правила</a></li>
+                    <li class="header__vip"><a href="VIP.html">VIP</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>                  <!-- header__hamburger_active -->
+            </nav>
+                <a href="autorization.html" class="header__enter">Регистрация/Вход</a>
+            <div class="header__hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div> 
+        </div>
+        <nav class="header__nav header__nav_m-visible">
+            <div class="header__wrapper header__wrapper_m-visible">
                 <div class="logo header__logo animation__type__logo">
                     <a href="../index.html">
                         <picture>
                             <source media="(max-width: 767px)" srcset="../img/logo.svg">
-                            <source media="(min-width: 768px)" srcset="../img/logo.svg">
+                             <source media="(min-width: 768px)" srcset="../img/logo.svg">
                             <img src="../img/logo.svg" alt="logo">
                         </picture>
                     </a>
@@ -55,114 +83,86 @@
                     <span></span>
                 </div> 
             </div>
-            <nav class="header__nav header__nav_m-visible">
-                <div class="header__wrapper header__wrapper_m-visible">
-                    <div class="logo header__logo animation__type__logo">
-                        <a href="../index.html">
-                            <picture>
-                                <source media="(max-width: 767px)" srcset="../img/logo.svg">
-                                    <source media="(min-width: 768px)" srcset="../img/logo.svg">
-                                <img src="../img/logo.svg" alt="logo">
-                            </picture>
-                        </a>
-                    </div>
-                    <nav class="header__nav header__nav_m-hidden">
-                        <ul class="header__list">
-                            <li><a href="../index.html">Главная</a></li>
-                            <li><a href="curent-event.html">Мероприятия</a></li>
-                            <li><a href="bangles.html">Браслеты</a></li>
-                            <li><a href="rules.html">Правила</a></li>
-                            <li class="header__vip"><a href="VIP.html">VIP</a></li>
-                            <li><a href="contacts.html">Контакты</a></li>
-                        </ul>                  <!-- header__hamburger_active -->
-                    </nav>
-                        <a href="autorization.html" class="header__enter">Регистрация/Вход</a>
-                    <div class="header__hamburger">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div> 
-                </div>
-                <div class="header__navWrapper">
-                    <ul class="header__list">
-                        <li class=" header__list-item header__list-item_li-m">
-                            <div class="header__accountwrap-m">
-                                <div class="header__icon"><img src="../img/icons/account.svg" alt="account"></div>
-                                <div class="header__account">Аккаунт</div>
-                            </div>
-                            <div class="header__arrow-m">
-                                <span></span>
-                                <span></span>
-                            </div>
-                        </li>
-                        <li class="header__list-item">
-                            <a href="../index.html">Главная</a>
-                            <div class="header__arrow-m">
-                                <span></span>
-                                <span></span>
-                            </div>
-                        </li>
-                        <li class="header__list-item">
-                            <a href="curent-event.html">Мероприятия</a>
-                            <div class="header__arrow-m">
-                                <span></span>
-                                <span></span>
-                            </div>
-                        </li>
-                        <li class="header__list-item">
-                            <a href="bangles.html">Браслеты</a> 
-                            <div class="header__arrow-m">
-                                <span></span>
-                                <span></span>
-                            </div>
-                        </li>
-                        <li class="header__list-item">
-                            <a href="rules.html">Правила</a>
-                            <div class="header__arrow-m">
-                                <span></span>
-                                <span></span>
-                            </div>
-                        </li>
-                        <li class=" header__list-item header__vip">
-                            <a href="VIP.html">VIP</a>
-                            <div class="header__arrow-m">
-                                <span></span>
-                                <span></span>
-                            </div>
-                        </li>
-                        <li class="header__list-item">
-                            <a href="contacts.html">Контакты</a>
-                            <div class="header__arrow-m">
-                                <span></span>
-                                <span></span>
-                            </div>
-                        </li>
-                    </ul>
-                    <div class="header__phonewrap-m">
-                        <div>
-                            <div class="header__phone"><img src="../img/icons/phone.svg" alt="phone"></div>
-                            <a href="tel:+70000000000" class="header__number">+7 (000) 000-00-00</a>
+            <div class="header__navWrapper">
+                <ul class="header__list">
+                    <li class=" header__list-item header__list-item_li-m">
+                        <div class="header__accountwrap-m">
+                            <div class="header__icon"><img src="../img/icons/account.svg" alt="account"></div>
+                            <div class="header__account">Аккаунт</div>
                         </div>
-                        <div>
-                            <div class="header__letter"><img src="../img/icons/gmail.svg" alt="letter"></div>
-                            <div class="header__email"><a href="mailto:info@gmail.com<"></a>info@gmail.com</div>
+                        <div class="header__arrow-m">
+                            <span></span>
+                            <span></span>
                         </div>
+                    </li>
+                    <li class="header__list-item">
+                        <a href="../index.html">Главная</a>
+                        <div class="header__arrow-m">
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </li>
+                    <li class="header__list-item">
+                        <a href="curent-event.html">Мероприятия</a>
+                        <div class="header__arrow-m">
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </li>
+                    <li class="header__list-item">
+                        <a href="bangles.html">Браслеты</a> 
+                        <div class="header__arrow-m">
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </li>
+                    <li class="header__list-item">
+                        <a href="rules.html">Правила</a>
+                        <div class="header__arrow-m">
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </li>
+                    <li class=" header__list-item header__vip">
+                        <a href="VIP.html">VIP</a>
+                        <div class="header__arrow-m">
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </li>
+                    <li class="header__list-item">
+                        <a href="contacts.html">Контакты</a>
+                        <div class="header__arrow-m">
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </li>
+                </ul>
+                <div class="header__phonewrap-m">
+                    <div>
+                        <div class="header__phone"><img src="../img/icons/phone.svg" alt="phone"></div>
+                        <a href="tel:+70000000000" class="header__number">+7 (000) 000-00-00</a>
                     </div>
-                    <div class="header__social-m">
-                        <a href="https://instagram.ru/" class="header__links"><img src="../img/icons/vk.svg" alt="social"></a>
-                        <a href="https://wa.me/+79000000000" class="header__links"><img src="../img/icons/watsapp-white.svg" alt="social"></a>
-                        <a href="https://vk.com/" class="header__links"><img src="../img/icons/instagram.svg" alt="social"></a>
-                        <a href="tg://resolve?domain=имя_пользователя" class="header__links"><img src="../img/icons/telegram-white.svg" alt="social"></a>
+                    <div>
+                        <div class="header__letter"><img src="../img/icons/gmail.svg" alt="letter"></div>
+                        <div class="header__email"><a href="mailto:info@gmail.com"></a>info@gmail.com</div>
                     </div>
-                    <div class="header__confidantial-m">
-                        © 2024 ООО «Притяжение». Все права защищены.
-                    </div>
-    
-                    <a href="autorization.html" class="button button_nobg header__btn-m">Войти или Зарегистрироваться</a>
                 </div>
-            </nav>
-        </div>
-    </header>
+                <div class="header__social-m">
+                    <a href="https://instagram.ru/" class="header__links"><img src="../img/icons/vk.svg" alt="social"></a>
+                    <a href="https://wa.me/+79000000000" class="header__links"><img src="../img/icons/watsapp-white.svg" alt="social"></a>
+                    <a href="https://vk.com/" class="header__links"><img src="../img/icons/instagram.svg" alt="social"></a>
+                    <a href="tg://resolve?domain=имя_пользователя" class="header__links"><img src="../img/icons/telegram-white.svg" alt="social"></a>
+                </div>
+                <div class="header__confidantial-m">
+                    © 2024 ООО «Притяжение». Все права защищены.
+                </div>
+
+                <a href="autorization.html" class="button button_nobg header__btn-m">Войти или Зарегистрироваться</a>
+            </div>
+        </nav>
+    </div>
+</header>
         <section class="loyalty">
     <div class="container">
         <h2 class="title loyalty__title">Система лояльности</h2>
@@ -240,18 +240,18 @@
         </div>
     </div>
 </section>
-<footer class="footer">
+        <footer class="footer">
     <div class="container">
         <div class="footer__top">
             <div class="footer__social">
-                <a href="tg://resolve?domain=имя_пользователя"class="footer__links"><img src="../img/icons/watsapp.svg"  alt="socilal"></a>
+                <a href="tg://resolve?domain=имя_пользователя" class="footer__links"><img src="../img/icons/watsapp.svg"  alt="socilal"></a>
                 <a href="https://wa.me/+79000000000"  class="footer__links"><img src="../img/icons/telegram.svg" alt="socilal"></a>
             </div>
             <a href="autorization.html" class="button button_footer footer__btn">Зарегистрироваться</a>
         </div> 
         <div class="footer__wrapper">
             <div class="footer__logwrap">
-                <div class="logo footer__logo"><a href="../index.html"><img src="../img/logo.svg" alt="logo"></a></div>
+                <div class="logo footer__logo"><a href="../index.html"><img /img/logo.svg" alt="logo"></a></div>
                 <div class="footer__emailwrap">
                     <div class="footer__letter"> <img src="../img/icons/gmail.svg" alt="letter"></div> 
                     <div class="footer__email"><a href="mailto:info@gmail.com">info@gmail.com</a></div>
@@ -259,7 +259,7 @@
             </div>
             <div>
                 <ul class="footer__list">
-                <h3 class="title footer__headline">Компания</h3>
+                <div class="title footer__headline">Компания</div>
                     <li><a href="../index.html">Главная</a></li>
                     <li><a href="autorization.html">Вступить в клуб</a></li>
                     <li><a href="events.html">Афиша (наши мероприятия)</a></li>
@@ -268,7 +268,7 @@
             </div>
             <div>
                 <ul class="footer__list footer__list_ml-">
-                <h3 class="title footer__headline">Система</h3>
+                <div class="title footer__headline">Система</div>
                     <li><a href="rules.html">Правила</a></li>
                     <li><a href="VIP.html">VIP</a></li>
                     <li><a href="loyalty.html">Система лояльности</a></li>
@@ -316,7 +316,7 @@
                     </div>
                     <div class="action-modal__price">
                         <div>
-                            <input id="couple-cost-comfort" name="couple" value="Комфорт 11 000 ₽" type="radio" class="feed-form__hidden action-modal__hidden action-modal__hidden_price">
+                            <input id="couple-cost-comfort" name="couple" value="Комфорт 11 000 ₽" type="radio" class="feed-form__hidden action-modal__hidden action-modal__hidden_price">  <!-- !!!!!!! -->
                             <label class="action-modal__radio" for="couple-cost-comfort"></label>
                             <div class="feed-form__label feed-form__label_white">Билет вход Comfort с пары</div>
                         </div>
@@ -326,7 +326,7 @@
                 <div class="action-modal__content animation__type__fade">
                     <div class="action-modal__price">
                         <div>
-                            <input id="single-man-cost" name="couple" value="5000 ₽" type="radio" class="feed-form__hidden action-modal__hidden action-modal__hidden_price">
+                            <input id="single-man-cost" name="couple" value="5000 ₽" type="radio" class="feed-form__hidden action-modal__hidden action-modal__hidden_price"> <!-- !!!!!!! -->
                             <label class="action-modal__radio" for="single-man-cost"></label>
                             <div class="feed-form__label feed-form__label_white">Билет вход с человека</div>
                         </div>
@@ -334,7 +334,7 @@
                     </div>
                     <div class="action-modal__price">
                         <div>
-                            <input id="single-man-cost-comfort" name="couple" value="Комфорт 6000 ₽" type="radio" class="feed-form__hidden action-modal__hidden action-modal__hidden_price">
+                            <input id="single-man-cost-comfort" name="couple" value="Комфорт 6000 ₽" type="radio" class="feed-form__hidden action-modal__hidden action-modal__hidden_price"> <!-- !!!!!!! -->
                             <label class="action-modal__radio" for="single-man-cost-comfort"></label>
                             <div class="feed-form__label feed-form__label_white">Билет вход Comfort с человека</div>
                         </div>
@@ -344,7 +344,7 @@
                 <div class="action-modal__content animation__type__fade">
                     <div class="action-modal__price">
                         <div>
-                            <input id="single-woman-cost" name="couple" value="5000 ₽" type="radio" class="feed-form__hidden action-modal__hidden action-modal__hidden_price">
+                            <input id="single-woman-cost" name="couple" value="5000 ₽" type="radio" class="feed-form__hidden action-modal__hidden action-modal__hidden_price"> <!-- !!!!!!! -->
                             <label class="action-modal__radio" for="single-woman-cost"></label>
                             <div class="feed-form__label feed-form__label_white">Билет вход с человека</div>
                         </div>
@@ -352,7 +352,7 @@
                     </div>
                     <div class="action-modal__price">
                         <div>
-                            <input id="single-woman-cost-comfort" name="couple" value="Комфорт 6000 ₽" type="radio" class="feed-form__hidden action-modal__hidden action-modal__hidden_price">
+                            <input id="single-woman-cost-comfort" name="couple" value="Комфорт 6000 ₽" type="radio" class="feed-form__hidden action-modal__hidden action-modal__hidden_price"> <!-- !!!!!!! -->
                             <label class="action-modal__radio" for="single-woman-cost-comfort"></label>
                             <div class="feed-form__label feed-form__label_white">Билет вход Comfort с человека</div>
                         </div>
@@ -380,7 +380,7 @@
                 <div class="join-modal__confidentialWrap feed-form__confidentialWrap feed-form__confidentialWrap_mt20 ">
                     <input id="join-modal-checkbox" name="rules" type="checkbox"  class="feed-form__hidden join-modal__hidden">
                     <label for="join-modal-checkbox" class="join-modal__checkbox feed-form__checkbox_modal feed-form__checkbox"></label>
-                    <div class="join-modal__confidential feed-form__confidential feed-form__confidential_mt0"><a href="rules.html">Я согласен с правилами клуба</a></div>
+                    <div class="join-modal__confidential feed-form__confidential feed-form__confidential_mt0"><a href="pages/rules.html">Я согласен с правилами клуба</a></div>
                 </div>
                 <div class="feed-form__errorBox feed-form__errorBox_join-modal-checkbox"></div>
             </form>
