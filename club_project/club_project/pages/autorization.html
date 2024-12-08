@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Авторизация | Притяжение</title>
+        <meta name="theme-color" content="#c9e0e04d">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="../img/favicons/favicon.ico" type="image/x-icon">
+        <link rel="icon" sizes="16x16" href="../img/favicons/favicon-16x16.png" type="image/png">
+        <link rel="icon" sizes="32x32" href="../img/favicons/favicon-32x32.png" type="image/png">
+        <link rel="apple-touch-icon-precomposed" href="../img/favicons/apple-touch-icon-precomposed.png">
+        <link rel="apple-touch-icon" href="../img/favicons/apple-touch-icon.png">
+        <link rel="apple-touch-icon" sizes="57x57" href="../img/favicons/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="../img/favicons/apple-touch-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="../img/favicons/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="../img/favicons/apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="../img/favicons/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="../img/favicons/apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="../img/favicons/apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="../img/favicons/apple-touch-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="167x167" href="../img/favicons/apple-touch-icon-167x167.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="../img/favicons/apple-touch-icon-180x180.png">
+        <link rel="apple-touch-icon" sizes="1024x1024" href="../img/favicons/apple-touch-icon-1024x1024.png">
+        <link rel="stylesheet" href="../styles/main.min.css">
+    </head>
+    <body>
+        <div class="autorization">
+    <div class="logo autorization__logo"><a href="../index.html"><img src="../img/logo.svg" alt="logo"></a></div>
+    <div class="feed-form feed-form_mt autorization__block">
+        <div class="autorization__tabsWrap">
+            <div class="feed-form__tabs autorization__tabs autorization__tabs_sign button autorization__tabs_active">Регистрация</div>
+            <div class="feed-form__tabs autorization__tabs autorization__tabs_enter button">Вход</div>
+        </div>
+
+        <div class="feed-form__enter autorization__enter autorization__content animation__type__fade">
+            <div class="feed-form__title autorization__title_tac autorization__title autorization__title_mb24">Присоединяйтесь к нашему клубу, чтобы получать эксклюзивные предложения и быть в курсе всех событий</div>
+            <form id="registration">
+                <div class="feed-form__inputWrap autorization__inputWrap">
+                    <input id="sign-user" name="user" type="text" class="feed-form__input feed-form__input_place-fz20 feed-form__input_br10 feed-form__input_mb30 feed-form__input_h68 autorization__input" placeholder="Имя">
+                    <div>
+                        <label for="sign-user" class="feed-form__label">Имя</label>
+                    </div>
+                </div>
+                <div class="feed-form__errorBox feed-form__errorBox_mt-20 feed-form__errorBox_mb20 feed-form__errorBox_sign-user"></div>
+                <div class="feed-form__inputWrap autorization__inputWrap">
+                    <input autocomplete="on" id="sign-email" name="email" type="email" class="feed-form__input feed-form__input_place-fz20 feed-form__input_br10 feed-form__input_mb16 feed-form__input_h68 autorization__input" placeholder="info@gmail.com">
+                    <div>
+                        <label for="sign-email" class="feed-form__label">Адрес электронной почты</label>
+                    </div>
+                </div>
+                <div class="feed-form__errorBox feed-form__errorBox_mt0 feed-form__errorBox_sign-email"></div>
+                <div class="feed-form__input feed-form__input_fz20 feed-form__input_place-fz20 feed-form__input_br10  feed-form__input_h68 feed-form__input_mb30 feed-form__select feed-form__select_sign">
+                    <span></span>
+                    <div class="feed-form__optionsWrap feed-form__input feed-form__input_br10 animation__type__fade_select">
+                        <input id="sign-sexW" name="sex" value="Девушка" type="radio" checked class="feed-form__hidden"> 
+                        <label for="sign-sexW" class="feed-form__option feed-form__option_sign">Девушка</label>
+                        <input id="sign-sexM" name="sex" value="Парень" type="radio" class="feed-form__hidden">                  
+                        <label for="sign-sexM" class="feed-form__option feed-form__option_sign">Парень</label>
+                        <input id="sign-sexC" name="sex" value="Пара" type="radio" class="feed-form__hidden">   
+                        <label for="sign-sexC" class="feed-form__option feed-form__option_sign">Пара</label>        
+                    </div>
+                </div>
+                <div class="feed-form__errorBox feed-form__errorBox_sign-select"></div>
+                <div class="feed-form__inputWrap autorization__inputWrap">
+                    <input autocomplete="on" id="sign-password" name="password" type="password" class="feed-form__input feed-form__input_place-fz20 feed-form__input_br10 feed-form__input_mb30 feed-form__input_h68 autorization__input" placeholder="Пароль">
+                    <div>
+                        <label for="sign-password" class="feed-form__label">Придумайте пароль</label>
+                    </div>
+                </div>
+                <div class="feed-form__errorBox feed-form__errorBox_mt-20 feed-form__errorBox_mb20 feed-form__errorBox_sign-password"></div>
+                <div class="feed-form__inputWrap autorization__inputWrap">
+                    <input id="sign-password_conf" name="password_conf" type="password" class="feed-form__input feed-form__input_place-fz20 feed-form__input_h68 feed-form__input_br10 feed-form__input_mb0  autorization__input" placeholder="Пароль">
+                    <div>
+                        <label for="sign-password_conf" class="feed-form__label">Повторите пароль</label>
+                    </div>
+                </div>
+                <div class="feed-form__errorBox feed-form__errorBox_sspec feed-form__errorBox_sign-password_conf"></div>
+                <button class="button button_footer feed-form__btn autorization__btn">Создать аккаунт</button>
+                <div class="feed-form__confidentialWrap autorization__wrap">
+                    <input id="sign-checkbox" name="checkbox" type="checkbox" class="feed-form__hidden autorization__checkbox">
+                    <label for="sign-checkbox" class="feed-form__checkbox"></label>
+                    <a href="policy.html" class="feed-form__confidential autorization__confidential feed-form__confidential_tal feed-form__confidential_mt0">Я ознакомлен(а) с политикой, офертой, и даю согласие на обработку персональных данных</a>
+                </div> 
+                <div class="feed-form__errorBox feed-form__errorBox_mt10 feed-form__errorBox_sign-checkbox"></div>
+            </form>
+        </div>
+        <div class="feed-form__enter autorization__enter autorization__content animation__type__fade">
+            <div class="feed-form__title autorization__title autorization__title_m-hidden">Войдите, используя свой адрес электронной почты и пароль</div>
+            <div class="feed-form__title autorization__title autorization__title_m-visible">Присоединяйтесь к нашему клубу, чтобы получать эксклюзивные предложения и быть в курсе всех событий</div>
+            <form id="autorization">
+                <div class="feed-form__inputWrap autorization__inputWrap">
+                    <input autocomplete="on" id="autorization-email" name="email" type="email" class="feed-form__input feed-form__input_place-fz20 feed-form__input_h68 feed-form__input_br10 feed-form__input_mb30 autorization__input" placeholder="info@gmail.com">
+                    <div>
+                        <label for="autorization-email" class="feed-form__label">Адрес электронной почты</label>
+                    </div>
+                </div>
+                <div class="feed-form__errorBox feed-form__errorBox_mt-20 feed-form__errorBox_mb20 feed-form__errorBox_autorization-email"></div>
+                <div class="feed-form__inputWrap autorization__inputWrap">
+                    <input autocomplete="on" id="autorization-password" name="password" type="password" class="feed-form__input feed-form__input_place-fz20 feed-form__input_h68 feed-form__input_br10 feed-form__input_mb16 autorization__input" placeholder="Пароль">
+                    <div>
+                        <label for="autorization-password" class="feed-form__label">Пароль</label>
+                    </div>
+                </div>
+                <div class="feed-form__errorBox feed-form__errorBox_autorization-password"></div>
+                <div class="feed-form__text feed-form__text_m-hidden autorization__text autorization__forgetPass">Забыли пароль?</div>
+                <button class="button  button_footer feed-form__btn autorization__btn">Войти</button>
+                <div class="feed-form__confidentialWrap autorization__wrap">
+                    <input id="autorization-checkbox" name="checkbox" type="checkbox" class="feed-form__hidden autorization__checkbox">
+                    <label for="autorization-checkbox" class="feed-form__checkbox"></label>
+                    <a href="policy.html" class="feed-form__confidential autorization__confidential feed-form__confidential_tal feed-form__confidential_mt0">Я ознакомлен(а) с политикой, офертой, и даю согласие на обработку персональных данных</a>
+                </div>
+                <div class="feed-form__errorBox feed-form__errorBox_mt10 feed-form__errorBox_autorization-checkbox"></div>                
+            </form>
+        </div>
+    </div>
+
+    <div class="feed-form feed-form_fixedw feed-form_mt feed-form_mt50 feed-form_alit-stretch autorization__pass">
+        <div class="autorization__tabsWrap autorization__tabsWrap_m-visible">
+            <div class="feed-form__tabs autorization__tabs autorization__tabs_sign button ">Регистрация</div>
+            <div class="feed-form__tabs autorization__tabs autorization__tabs_enter button autorization__tabs_active">Вход</div>
+        </div>
+        <div class="feed-form__enter autorization__enter feed-form__enter_active">
+            <div class="feed-form__forget autorization__forget">Забыли пароль?</div>
+            <div class="feed-form__title autorization__title autorization__title_mt10 autorization__title_mb24 autorization__title_tal">Введите свой адрес электронной почты, чтобы сбросить пароль</div>
+            <form id="forget">
+                <div class="feed-form__inputWrap autorization__inputWrap">
+                    <input autocomplete="on" id="forget-email" name="email" type="email" class="feed-form__input feed-form__input_place-fz20 feed-form__input_h68 feed-form__input_br10 feed-form__input_mb0 autorization__input" placeholder="info@gmail.com">
+                    <div>
+                        <label for="forget-email" class="feed-form__label">Адрес электронной почты</label>
+                    </div>
+                </div>
+                <div class="feed-form__errorBox feed-form__errorBox_mt10 feed-form__errorBox_forget-email"></div>
+                <button class="button  button_footer feed-form__btn autorization__btn autorization__recover">Восстановить</button>
+            </form>   
+            <div class="feed-form__text feed-form__text_mt16 feed-form__text_tac feed-form__text_colorw70 autorization__text">Уже вступил в клуб? <span><a href="autorization.html">Авторизоваться</a></span></div>           
+        </div>
+    </div>
+
+    <div class="feed-form feed-form_mt259 feed-form_center feed-form feed-form_br40 feed-form_alit-stretch autorization__verify">
+        <div class="feed-form__forget feed-form__forget_mt0">Проверка кода</div>
+        <div class="feed-form__title autorization__title autorization__title_tac autorization__title_mt20 autorization__title_mb20 autorization__title_mb20">Мы отправили проверочный код на ваш электронный адрес - dar*******@gmail.com</div>
+        <form id="verify">
+            <div class="feed-form__numberWrap autorization__numberWrap">
+                <input maxlength="1" name="code1" type="text" class="feed-form__input feed-form__input_number">
+                <input maxlength="1" name="code2" type="text" class="feed-form__input feed-form__input_number">
+                <input maxlength="1" name="code3" type="text" class="feed-form__input feed-form__input_number">
+                <input maxlength="1" name="code4" type="text" class="feed-form__input feed-form__input_number">
+            </div>
+            <div class="feed-form__errorBox feed-form__errorBox_armor-couple feed-form__errorBox_verify-code"></div>
+            <button class="button button_footer autorization__btn">Подтвердить</button>
+        </form>
+        <div class="feed-form__text feed-form__text_tac feed-form__text_mt20 feed-form__text_colorw70">Уже вступил в клуб? <span><a href="autorization.html">Авторизоваться</a></span></div>
+    </div>
+
+    <div class="feed-form feed-form_mt209 feed-form_br40 feed-form_center feed-form_alit-stretch autorization__set">
+        <div class="feed-form__forget feed-form__forget_mt0">Установите новый пароль</div>
+        <div class="feed-form__title autorization__title autorization__title_tac autorization__title_mt16 autorization__title_w458 ">Пожалуйста, создайте новый пароль, который вы не используете ни на одном другом сайте</div>
+        <form id="set-password" >
+            <div class="feed-form__inputWrap autorization__inputWrap">
+                <input id="set-email" name="set-email" type="email" class="feed-form__input feed-form__input_place-fz20 feed-form__input_h68 feed-form__input_br10 feed-form__input_mb30 " placeholder="Пароль">
+                <div>
+                    <label for="set-email" class="feed-form__label">Придумайте пароль</label>
+                </div>
+            </div>
+            <div class="feed-form__inputWrap autorization__inputWrap">
+                <input id="set-password-repeat" name="set-password-repeat" type="email" class="feed-form__input feed-form__input_place-fz20 feed-form__input_h68 feed-form__input_br10 feed-form__input_mb0" placeholder="Пароль">
+                <div>
+                    <label for="set-password-repeat" class="feed-form__label">Повторите пароль</label>
+                </div>
+            </div>
+            <button class="button button_footer autorization__btn autorization__btn_mt10">Изменить пароль</button>
+        </form>
+        <div class="feed-form__text feed-form__text_tac feed-form__text_mt16 feed-form__text_colorw70">Уже вступил в клуб? <span><a href="#">Авторизоваться</a></span></div>
+    </div>
+</div>
+        <script src="../js/vendor.min.js"></script>
+        <script src="../js/main.min.js"></script>
+    </body>
+</html>
